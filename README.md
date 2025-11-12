@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <img src="https://github.com/CN-ADLab/GUIDE/new/main/images/teaser.png" alt="GUIDE Teaser Figure" width="80%" />
+  <img src="https://github.com/CN-ADLab/GUIDE/raw/main/images/teaser.png" alt="GUIDE Teaser Figure" width="80%" />
 </p>
 
 ---
