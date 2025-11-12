@@ -8,5 +8,5 @@
 
 ---
 
-This work has been accepted at **AAAI 2026**.
-The code will be released soon!
+✅ This work has been accepted at **AAAI 2026**.<br>
+🚀 The code will be released soon!
