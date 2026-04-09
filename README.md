@@ -6,26 +6,22 @@
   </h1>
 </div>
 
-<center>
-  <img
-    style="border-radius: 0.3125em;
-           box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
-    src="resources/teaser.png"
-    alt="Teaser Figure"
-    width="80%"
+<p align="center">
+  <img 
+    src="resources/teaser.png" 
+    alt="Teaser Figure" 
+    width="80%" 
+    style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
   >
   <br>
-  <div style="border-bottom: 1px solid #d9d9d9;
-              display: inline-block;
-              color: #999;
-              padding: 2px;">
-    Teaser Figure
-  </div>
-</center>
+  <span style="border-bottom: 1px solid #d9d9d9; color: #999; padding: 2px; display: inline-block;">
+    <!-- 这里可以放图片标题，如果没有标题可以留空或删除 span -->
+  </span>
+</p>
 
 
 ## News
-* **`Apr, 2026`:** We’ve cleaned up and reorganized the code for better readability — code and models are now open-sourced!
+* **`April, 2026`:** We’ve cleaned up and reorganized the code for better readability — code and models are now open-sourced!
 * **`Nov, 2025`:** GUIDE is accepted by AAAI 2026 and we release the GUIDE paper on [arXiv](https://arxiv.org/pdf/2511.12941). Code & Models will be soon released.
 
 
@@ -35,22 +31,27 @@
 - Our method employs a fully sparse representation for instance occupancy, greatly enhancing memory efficiency and allowing for flexible adjustment of inference resolution, thanks to the properties of Gaussian representation.
 - GUIDE achieves an instance occupancy detection mAP of 21.61 on the nuScenes benchmark, reflecting a 50% improvement over SparseOcc, and delivers competitive performance in both detection and tracking tasks.
 
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="resources/framework.png" width="1000">
-    <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">Framework of our GUIDE. Instance queries and their anchors are subsequently initialized and iteratively updated through interactions with image features using the instance decoder. The updated top-k instances are combined with those in the historical instance bank to form a new candidate instance set. Each instance is then associated with multiple 3D Gaussians, which serve as their representations. These Gaussians are refined iteratively through a 5-layer Gaussian Decoder. Subsequently, instance occupancy predictions are generated via Gaussian-to-Voxel Splatting. And aggregating Gaussian features allows reconstruction of instance-level representations to predict each instance's bounding box and category. Additionally, the top-k instances update the instance bank, adding temporal information to aid inference for later frames. Meanwhile, we assign unique IDs to instances whose confidence scores exceed a predefined threshold in the instance bank for instance tracking across frames.</div>
-</center>
+<p align="center">
+  <img 
+    src="resources/framework.png" 
+    alt="Framework of GUIDE" 
+    width="1000" 
+    style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12), 0 2px 10px 0 rgba(34,36,38,.08);"
+  >
+</p>
+
+<p style="color: #666; font-size: 0.85em; text-align: left; max-width: 90%; margin: 10px auto;">
+  <b>Framework of GUIDE.</b> Instance queries and their anchors are subsequently initialized and iteratively updated through interactions with image features using the instance decoder. The updated top-k instances are combined with those in the historical instance bank to form a new candidate instance set. Each instance is then associated with multiple 3D Gaussians, which serve as their representations. These Gaussians are refined iteratively through a 5-layer Gaussian Decoder. Subsequently, instance occupancy predictions are generated via Gaussian-to-Voxel Splatting. And aggregating Gaussian features allows reconstruction of instance-level representations to predict each instance's bounding box and category. Additionally, the top-k instances update the instance bank, adding temporal information to aid inference for later frames. Meanwhile, we assign unique IDs to instances whose confidence scores exceed a predefined threshold in the instance bank for instance tracking across frames.
+</p>
+
 
 ## Main results
+
 <small>Note: The reported training results may differ slightly from those in the paper due to the inherent randomness and non-determinism in the training process (e.g., random initialization, data shuffling, and hardware/parallelism effects).</small>
+
 | Model | config | ckpt | det: mAP | det: NDS | track: AMOTA | track: IDS | occ: (mAP<sub>occ</sub>)<sup>10</sup> |
-| :---: | :---: | :---: | :---: | :---: | :---:|:---:|:---: | :---: | :----: | 
-| GUIDE |[cfg](projects/configs/guide.py)|[ckpt](https://github.com/CN-ADLab/GUIDE/releases/download/v1.0/guide_gs32.pth)|41.1|51.9|39.6|577| 24.6 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| GUIDE | [cfg](projects/configs/guide.py) | [ckpt](https://github.com/CN-ADLab/GUIDE/releases/download/v1.0.0/guide_gs32.pth) | 41.1 | 51.9 | 39.6 | 577 | 24.6 |
 
 
 

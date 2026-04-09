@@ -48,7 +48,7 @@ wget https://download.pytorch.org/models/resnet50-19c8e357.pth -O ckpt/resnet50-
 ```
 
 ### Download the required weights
-Download our trained weights [guide_gs32.pth](https://github.com/CN-ADLab/GUIDE/releases/download/v1.0/guide_gs32.pth), put it in ./ckpt.
+Download our trained weights [guide_gs32.pth](https://github.com/CN-ADLab/GUIDE/releases/download/v1.0.0/guide_gs32.pth), put it in ./ckpt.
 
 
 ### Commence testing
